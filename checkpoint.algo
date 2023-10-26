@@ -1,0 +1,36 @@
+FUNCTION palindrome(ch) : STRING
+VAR
+    i:INTEGER:=0;
+    ch1:STRING;
+BEGIN
+    n:=ch.length-1 
+        IF (ch[i] = ch[n]) THEN
+            ch1:=ch[i+1:n-1];
+            n--;
+            i++:  
+        RETURN palindrome(ch1) ; //recursion 
+        ELSE_IF (ch1.length = 0 or ch1.length = 1) THEN
+        RETURN true ;    //condition d arret 
+        ELSE
+        RETURN false;    //condition d arret
+        END_IF
+END
+
+
+
+
+ALGORITHM checkpoint
+VAR
+    ch:STRING;
+    n:INTEGER:=0;
+    resultat:BOOLEAN;
+BEGIN
+    write("donne une mot");
+    read(ch);  //declaration du la mot a teste
+    resultat:=palindrome(ch);  //appel de fonction 
+    IF (resultat = true) THEN   //test sur la resulat du fonction 
+        write("la mot donne est palindrome");
+    ELSE
+        write("la mot donne n est pas palindrome");
+    END_IF
+END
